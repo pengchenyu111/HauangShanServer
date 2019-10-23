@@ -19,10 +19,13 @@ import org.apache.commons.dbcp2.BasicDataSource;
 
 public class DBUtil {
 
-    public static final String TABLE_USER = "table_user_password";
-    public static final String TABLE_USERINFO = "table_user_info";
+    public static final String TABLE_ADMIN = "tb_admin";
+    public static final String TABLE_SCENIC = "tb_scenic";
+    public static final String TABLE_SCENICMANAGE = "tb_scenicmanage";
+    public static final String TABLE_NOTIFICATION = "tb_notification";
 
-    private static final String URL = "jdbc:mysql://localhost:3306/first_mysql_test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8";
+
+    private static final String URL = "jdbc:mysql://localhost:3306/huangshan?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8";
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String USER = "root";
     private static final String PASSWORD = "PCY90321";

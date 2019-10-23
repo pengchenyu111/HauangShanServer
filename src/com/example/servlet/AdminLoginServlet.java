@@ -41,43 +41,50 @@ public class AdminLoginServlet extends HttpServlet {
 //  	相比POST，GET地效率更高
 //  	GET多用于查询
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		设置字符格式，要养成号习惯
+//		设置字符格式，要养成好习惯
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
 
-//		获得url中的account 和 password 的值
-        String account = request.getParameter("account");
-        String password = request.getParameter("password");
+//		获得url中的adminAccount 和 adminPassword 的值
+        String adminAccount = request.getParameter("adminAccount");
+        String adminPassword = request.getParameter("adminPassword");
 
-        String resCode = "";
-        String resMsg = "";
+        String resultCode = "";
+        String resultMessage = "";
 
-        try {
+        if (adminAccount == null || adminPassword == null){
+            resultCode = "003";
+            resultMessage = "账号或密码不能为空";
+        }else{
+            try {
 //			建立连接并查询数据库
-            Connection connection = DBUtil.getConnect();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet;
+                Connection connection = DBUtil.getConnect();
+                Statement statement = connection.createStatement();
+                ResultSet resultSet;
 
-            String sql = "select * from "+DBUtil.TABLE_USER+" where userAccount='"+account+"' and userPassword='"+password+"'";
-            System.out.println(sql);
+                String sql = String.format("select * from %s where adminAccount='%s' and adminPassword='%s'", DBUtil.TABLE_ADMIN,adminAccount,adminPassword);
+                System.out.println(sql);
 
-            resultSet = statement.executeQuery(sql);
-            if(resultSet.next()) {
-                resCode = "200";
-                resMsg = "OK";
-            }else {
-                resCode = "201";
-                resMsg = "账号或密码不正确";
+                resultSet = statement.executeQuery(sql);
+                if(resultSet.next()) {
+                    resultCode = "001";
+                    resultMessage = "登录成功";
+                }else {
+                    resultCode = "002";
+                    resultMessage = "账号或密码不正确";
+                }
+                DBUtil.close(connection, statement, resultSet);
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            DBUtil.close(connection, statement, resultSet);
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
+
+
 
 //		用map封装需要返回的数据
         Map<String, String> map = new HashMap<>();
-        map.put("resCode", resCode);
-        map.put("resMsg", resMsg);
+        map.put("resultCode", resultCode);
+        map.put("resultMessage", resultMessage);
 
 //		将map转化为json数据格式，这里用到了GSON 第三方包
         Gson gson = new Gson();
@@ -98,8 +105,8 @@ public class AdminLoginServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
 
-        String account = null;
-        String password = null;
+        String adminAccount = null;
+        String adminPassword = null;
         String[] temp;
 
 //		获取传过来的map
@@ -110,40 +117,45 @@ public class AdminLoginServlet extends HttpServlet {
         for(String key : keys) {
             String k  = key;
             temp = data.get(key);
-            if("account".equals(k)) {
-                account = temp[0];
-            }else if("password".equals(k)) {
-                password = temp[0];
+            if("adminAccount".equals(k)) {
+                adminAccount = temp[0];
+            }else if("adminPassword".equals(k)) {
+                adminPassword = temp[0];
             }
         }
-        System.out.println("account:"+account+","+"password:"+password);
+        System.out.println("adminAccount:"+adminAccount+","+"adminPassword:"+adminPassword);
 
-        String resCode = "";
-        String resMsg = "";
+        String resultCode = "";
+        String resultMessage = "";
 
-        try {
-            Connection connection = DBUtil.getConnect();
-            Statement statement = connection.createStatement();
+        if (adminAccount == null || adminPassword == null){
+            resultCode = "003";
+            resultMessage = "账号或密码不能为空";
+        }else{
+            try {
+                Connection connection = DBUtil.getConnect();
+                Statement statement = connection.createStatement();
 
-            String sql = String.format("select * from %s where userAccount='%s' and userPassword='%s'", DBUtil.TABLE_USER,account,password);
-            System.out.println(sql);
+                String sql = String.format("select * from %s where userAccount='%s' and userPassword='%s'", DBUtil.TABLE_ADMIN,adminAccount,adminPassword);
+                System.out.println(sql);
 
-            ResultSet resultSet = statement.executeQuery(sql);
-            if(resultSet.next()) {
-                resCode = "200";
-                resMsg = "OK";
-            }else {
-                resCode = "201";
-                resMsg = "账号或密码不正确";
+                ResultSet resultSet = statement.executeQuery(sql);
+                if(resultSet.next()) {
+                    resultCode = "001";
+                    resultMessage = "登录成功";
+                }else {
+                    resultCode = "002";
+                    resultMessage = "账号或密码不正确";
+                }
+                DBUtil.close(connection, statement, resultSet);
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            DBUtil.close(connection, statement, resultSet);
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
 
         HashMap<String, String> map = new HashMap<>();
-        map.put("resCode", resCode);
-        map.put("resMsg", resMsg);
+        map.put("resultCode", resultCode);
+        map.put("resultMessage", resultMessage);
 
 
         Gson gson = new Gson();
@@ -152,8 +164,6 @@ public class AdminLoginServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         pw.append(respData);
         pw.flush();
-
-
 
     }
 
