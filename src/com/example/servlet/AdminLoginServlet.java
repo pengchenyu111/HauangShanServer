@@ -136,7 +136,7 @@ public class AdminLoginServlet extends HttpServlet {
                 Connection connection = DBUtil.getConnect();
                 Statement statement = connection.createStatement();
 
-                String sql = String.format("select * from %s where userAccount='%s' and userPassword='%s'", DBUtil.TABLE_ADMIN,adminAccount,adminPassword);
+                String sql = String.format("select * from %s where adminAccount='%s' and adminPassword='%s'", DBUtil.TABLE_ADMIN,adminAccount,adminPassword);
                 System.out.println(sql);
 
                 ResultSet resultSet = statement.executeQuery(sql);
