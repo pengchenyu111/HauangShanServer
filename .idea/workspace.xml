@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="626e0cf2-ce1a-4084-b7d3-1ac9efd63c62" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/explain/explain.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/explain/explain.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/servlet/AdminLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/servlet/AdminLoginServlet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +46,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -153,7 +155,9 @@
       <workItem from="1571799361278" duration="1650000" />
       <workItem from="1571801819548" duration="325000" />
       <workItem from="1571802180811" duration="622000" />
-      <workItem from="1571831257512" duration="5264000" />
+      <workItem from="1571831257512" duration="6046000" />
+      <workItem from="1572142492750" duration="6000" />
+      <workItem from="1572406353913" duration="2356000" />
     </task>
     <task id="LOCAL-00001" summary="完成AdminLoginServlet编写">
       <created>1571836793516</created>
@@ -162,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571836793516</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="修复AdminLoginServlet中的bug">
+      <created>1571838069857</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571838069857</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +193,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/HuangShanServer" />
+    </ignored-roots>
     <MESSAGE value="完成AdminLoginServlet编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成AdminLoginServlet编写" />
+    <MESSAGE value="修复AdminLoginServlet中的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复AdminLoginServlet中的bug" />
   </component>
 </project>

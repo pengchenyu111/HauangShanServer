@@ -55,6 +55,14 @@ public class AdminLoginServlet extends HttpServlet {
         if (adminAccount == null || adminPassword == null){
             resultCode = "003";
             resultMessage = "账号或密码不能为空";
+        }else if (adminAccount.indexOf("or") != -1){
+            //防止SQL注入
+            resultCode = "004";
+            resultMessage = "账号含有非法字符";
+        }else if (adminPassword.indexOf("or") != -1){
+            //防止SQL注入
+            resultCode = "005";
+            resultMessage = "密码含有非法字符";
         }else{
             try {
 //			建立连接并查询数据库
@@ -131,6 +139,14 @@ public class AdminLoginServlet extends HttpServlet {
         if (adminAccount == null || adminPassword == null){
             resultCode = "003";
             resultMessage = "账号或密码不能为空";
+        }else if (adminAccount.indexOf("or") != -1){
+            //防止SQL注入
+            resultCode = "004";
+            resultMessage = "账号含有非法字符";
+        }else if (adminPassword.indexOf("or") != -1){
+            //防止SQL注入
+            resultCode = "005";
+            resultMessage = "密码含有非法字符";
         }else{
             try {
                 Connection connection = DBUtil.getConnect();
