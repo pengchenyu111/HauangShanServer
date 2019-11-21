@@ -7,15 +7,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="626e0cf2-ce1a-4084-b7d3-1ac9efd63c62" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/example/constant/ResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/example/pojo/DailyNum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/example/servlet/admin/AllAdminsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/example/servlet/admin/DeleteAdminManage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/example/servlet/admin/SelectDailyNumServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/explain/explain.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/explain/explain.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/explain/explain.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/example/servlet/AdminLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/servlet/AdminLoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/utils/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/utils/DBUtil.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="huangshan: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="huangshan: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tb_dailynum: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -27,6 +73,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\MyOwnCodes\IJIDEAJAVA\HuangShanServer\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -37,9 +90,11 @@
   <component name="ProjectId" id="1SaQhkOsVfgRxgJZPScTd6c8uZp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/HuangShan" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -67,7 +122,6 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.24" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/HuangShanServer/" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8 " />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -77,6 +131,11 @@
             <option name="CONTEXT_PATH" value="/HuangShanServer" />
           </settings>
         </artifact>
+        <file path="D:/HuangShan">
+          <settings>
+            <option name="CONTEXT_PATH" value="/HuangShan" />
+          </settings>
+        </file>
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_HuangShanServer_2" />
@@ -142,6 +201,31 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2a01189a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2a01189a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@22162e2e" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2a01189a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@71191b33" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -157,7 +241,18 @@
       <workItem from="1571802180811" duration="622000" />
       <workItem from="1571831257512" duration="6046000" />
       <workItem from="1572142492750" duration="6000" />
-      <workItem from="1572406353913" duration="2356000" />
+      <workItem from="1572406353913" duration="12109000" />
+      <workItem from="1572437106753" duration="2856000" />
+      <workItem from="1572492644874" duration="4370000" />
+      <workItem from="1572542065442" duration="1323000" />
+      <workItem from="1572603503933" duration="384000" />
+      <workItem from="1572660777453" duration="807000" />
+      <workItem from="1572912578083" duration="6373000" />
+      <workItem from="1572999480560" duration="6604000" />
+      <workItem from="1573015054502" duration="242000" />
+      <workItem from="1574166849736" duration="1369000" />
+      <workItem from="1574216097089" duration="1291000" />
+      <workItem from="1574248848812" duration="6182000" />
     </task>
     <task id="LOCAL-00001" summary="完成AdminLoginServlet编写">
       <created>1571836793516</created>
@@ -173,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571838069857</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修复登录请求中的SQL注入bug">
+      <created>1572409024486</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572409024486</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +300,7 @@
     </ignored-roots>
     <MESSAGE value="完成AdminLoginServlet编写" />
     <MESSAGE value="修复AdminLoginServlet中的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复AdminLoginServlet中的bug" />
+    <MESSAGE value="修复登录请求中的SQL注入bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复登录请求中的SQL注入bug" />
   </component>
 </project>

@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.example.constant.ResultCode;
 import com.example.utils.DBUtil;
 import com.google.gson.Gson;
 
@@ -53,16 +54,16 @@ public class AdminLoginServlet extends HttpServlet {
         String resultMessage = "";
 
         if (adminAccount == null || adminPassword == null){
-            resultCode = "003";
-            resultMessage = "账号或密码不能为空";
+            resultCode = ResultCode.LOGIN_DATA_NULL;
+            resultMessage = ResultCode.LOGIN_DATA_NULL_MSG;
         }else if (adminAccount.indexOf("or") != -1){
             //防止SQL注入
-            resultCode = "004";
-            resultMessage = "账号含有非法字符";
+            resultCode = ResultCode.LOGIN_ACCOUNT_ILLEGAL;
+            resultMessage = ResultCode.LOGIN_ACCOUNT_ILLEGAL_MSG;
         }else if (adminPassword.indexOf("or") != -1){
             //防止SQL注入
-            resultCode = "005";
-            resultMessage = "密码含有非法字符";
+            resultCode = ResultCode.LOGIN_PASSWORD_ILLEGAL;
+            resultMessage = ResultCode.LOGIN_PASSWORD_ILLEGAL_MSG;
         }else{
             try {
 //			建立连接并查询数据库
@@ -75,11 +76,11 @@ public class AdminLoginServlet extends HttpServlet {
 
                 resultSet = statement.executeQuery(sql);
                 if(resultSet.next()) {
-                    resultCode = "001";
-                    resultMessage = "登录成功";
+                    resultCode = ResultCode.LOGIN_SUCCESS;
+                    resultMessage = ResultCode.LOGIN_SUCCESS_MSG;
                 }else {
-                    resultCode = "002";
-                    resultMessage = "账号或密码不正确";
+                    resultCode = ResultCode.LOGIN_DATA_WRONG;
+                    resultMessage = ResultCode.LOGIN_DATA_WRONG_MSG;
                 }
                 DBUtil.close(connection, statement, resultSet);
             } catch (SQLException e) {
@@ -137,16 +138,16 @@ public class AdminLoginServlet extends HttpServlet {
         String resultMessage = "";
 
         if (adminAccount == null || adminPassword == null){
-            resultCode = "003";
-            resultMessage = "账号或密码不能为空";
+            resultCode = ResultCode.LOGIN_DATA_NULL;
+            resultMessage = ResultCode.LOGIN_DATA_NULL_MSG;
         }else if (adminAccount.indexOf("or") != -1){
             //防止SQL注入
-            resultCode = "004";
-            resultMessage = "账号含有非法字符";
+            resultCode = ResultCode.LOGIN_ACCOUNT_ILLEGAL;
+            resultMessage = ResultCode.LOGIN_ACCOUNT_ILLEGAL_MSG;
         }else if (adminPassword.indexOf("or") != -1){
             //防止SQL注入
-            resultCode = "005";
-            resultMessage = "密码含有非法字符";
+            resultCode = ResultCode.LOGIN_PASSWORD_ILLEGAL;
+            resultMessage = ResultCode.LOGIN_PASSWORD_ILLEGAL_MSG;
         }else{
             try {
                 Connection connection = DBUtil.getConnect();
@@ -157,11 +158,11 @@ public class AdminLoginServlet extends HttpServlet {
 
                 ResultSet resultSet = statement.executeQuery(sql);
                 if(resultSet.next()) {
-                    resultCode = "001";
-                    resultMessage = "登录成功";
+                    resultCode = ResultCode.LOGIN_SUCCESS;
+                    resultMessage = ResultCode.LOGIN_SUCCESS_MSG;
                 }else {
-                    resultCode = "002";
-                    resultMessage = "账号或密码不正确";
+                    resultCode = ResultCode.LOGIN_DATA_WRONG;
+                    resultMessage = ResultCode.LOGIN_DATA_WRONG_MSG;
                 }
                 DBUtil.close(connection, statement, resultSet);
             } catch (SQLException e) {

@@ -23,6 +23,7 @@ public class DBUtil {
     public static final String TABLE_SCENIC = "tb_scenic";
     public static final String TABLE_SCENICMANAGE = "tb_scenicmanage";
     public static final String TABLE_NOTIFICATION = "tb_notification";
+    public static final String TABLE_DAILYNUM = "tb_dailynum";
 
 
     private static final String URL = "jdbc:mysql://localhost:3306/huangshan?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8";
@@ -87,6 +88,30 @@ public class DBUtil {
                 conn = null;
             }
         }
+    }
+
+    public static void close(Connection conn, Statement stat){
+
+        if(conn != null ){
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }finally{
+                conn = null;
+            }
+        }
+
+        if(stat != null ){
+            try {
+                stat.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }finally{
+                stat = null;
+            }
+        }
+
     }
 
 }
