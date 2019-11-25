@@ -7,13 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="626e0cf2-ce1a-4084-b7d3-1ac9efd63c62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/example/pojo/HourlyNum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/servlet/admin/AdminUpdateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/pojo/DailyNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/pojo/DailyNum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/servlet/admin/AllAdminsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/servlet/admin/AllAdminsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/servlet/admin/SelectDailyNumServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/servlet/admin/SelectDailyNumServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/servlet/admin/SelectHourlyNumServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/servlet/admin/SelectHourlyNumServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/example/huangshan.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +83,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/HuangShan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/example" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -253,7 +247,7 @@
       <workItem from="1574482474282" duration="4793000" />
       <workItem from="1574575998695" duration="4435000" />
       <workItem from="1574665639727" duration="2235000" />
-      <workItem from="1574681983256" duration="1672000" />
+      <workItem from="1574681983256" duration="1923000" />
     </task>
     <task id="LOCAL-00001" summary="完成AdminLoginServlet编写">
       <created>1571836793516</created>
@@ -290,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574303506111</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="初步完成日客流和小时客流操作">
+      <created>1574699819865</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574699819865</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,6 +348,7 @@
     <MESSAGE value="修复AdminLoginServlet中的bug" />
     <MESSAGE value="修复登录请求中的SQL注入bug" />
     <MESSAGE value="完成管理员地图展示连接数据库" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成管理员地图展示连接数据库" />
+    <MESSAGE value="初步完成日客流和小时客流操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="初步完成日客流和小时客流操作" />
   </component>
 </project>
