@@ -69,12 +69,11 @@ public class SelectDailyNumServlet extends HttpServlet {
                 String dateName = String.valueOf(resultSet.getDate("dateName"));
                 String dateWeek = resultSet.getString("dateWeek");
                 int totalNum = resultSet.getInt("totalNum");
-                int orderNum = resultSet.getInt("orderNum");
-
-
+                int eightNum = resultSet.getInt("eightNum");
+                int nineNum = resultSet.getInt("nineNum");
 
                 //放入新的对象中
-                DailyNum num = new DailyNum(dateName,dateWeek,totalNum,orderNum);
+                DailyNum num = new DailyNum(dateName,dateWeek,totalNum,eightNum,nineNum);
                 System.out.println(num);
 
                 //放入List
@@ -146,10 +145,11 @@ public class SelectDailyNumServlet extends HttpServlet {
                 String dateName = String.valueOf(resultSet.getDate("dateName"));
                 String dateWeek = resultSet.getString("dateWeek");
                 int totalNum = resultSet.getInt("totalNum");
-                int orderNum = resultSet.getInt("orderNum");
+                int eightNum = resultSet.getInt("eightNum");
+                int nineNum = resultSet.getInt("nineNum");
 
                 //放入新的对象中
-                DailyNum num = new DailyNum(dateName,dateWeek,totalNum,orderNum);
+                DailyNum num = new DailyNum(dateName,dateWeek,totalNum,eightNum,nineNum);
                 System.out.println(num);
 
                 //放入List

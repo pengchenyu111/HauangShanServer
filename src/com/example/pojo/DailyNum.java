@@ -8,16 +8,18 @@ public class DailyNum {
     private String dataName;
     private String dataWeek;
     private int totalNum;
-    private  int orderNum;
+    private int eightNum;
+    private int NineNum;
 
     public DailyNum() {
     }
 
-    public DailyNum(String dataName, String dataWeek, int totalNum, int orderNum) {
+    public DailyNum(String dataName, String dataWeek, int totalNum, int eightNum, int nineNum) {
         this.dataName = dataName;
         this.dataWeek = dataWeek;
         this.totalNum = totalNum;
-        this.orderNum = orderNum;
+        this.eightNum = eightNum;
+        NineNum = nineNum;
     }
 
     public String getDataName() {
@@ -44,21 +46,30 @@ public class DailyNum {
         this.totalNum = totalNum;
     }
 
-    public int getOrderNum() {
-        return orderNum;
+    public int getEightNum() {
+        return eightNum;
     }
 
-    public void setOrderNum(int orderNum) {
-        this.orderNum = orderNum;
+    public void setEightNum(int eightNum) {
+        this.eightNum = eightNum;
+    }
+
+    public int getNineNum() {
+        return NineNum;
+    }
+
+    public void setNineNum(int nineNum) {
+        NineNum = nineNum;
     }
 
     @Override
     public String toString() {
         return "DailyNum{" +
-                "dataName=" + dataName +
+                "dataName='" + dataName + '\'' +
                 ", dataWeek='" + dataWeek + '\'' +
                 ", totalNum=" + totalNum +
-                ", orderNum=" + orderNum +
+                ", eightNum=" + eightNum +
+                ", NineNum=" + NineNum +
                 '}';
     }
 }

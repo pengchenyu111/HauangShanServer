@@ -20,7 +20,7 @@ import java.util.Map;
 /**
  * 处理获取所有管理员的信息
  */
-
+//todo 需要重构数据库的admin表
 @WebServlet(
         name = "AllAdminsServlet",
         urlPatterns = {"/AllAdminsServlet"}
