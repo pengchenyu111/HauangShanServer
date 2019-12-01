@@ -128,10 +128,12 @@ public class SelectHourlyNumServlet extends HttpServlet {
         List<HourlyNum> hourlyNums = new ArrayList<HourlyNum>();
 
         //连接数据库
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
         try {
-            Connection connection = DBUtil.getConnect();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet;
+            connection = DBUtil.getConnect();
+            statement = connection.createStatement();
 
             String sql =
                     "SELECT  * FROM huangshan.tb_hourlynum " +
@@ -162,10 +164,12 @@ public class SelectHourlyNumServlet extends HttpServlet {
             pw.append(respData);
             pw.flush();
 
-            //关闭连接
-            DBUtil.close(connection, statement, resultSet);
+
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            //关闭连接
+            DBUtil.close(connection, statement, resultSet);
         }
     }
 }

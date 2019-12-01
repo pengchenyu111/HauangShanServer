@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.example.constant.ResultCode;
+import com.example.pojo.Admin;
 import com.example.utils.DBUtil;
 import com.google.gson.Gson;
 
@@ -49,7 +50,13 @@ public class AdminLoginServlet extends HttpServlet {
 //		获得url中的adminAccount 和 adminPassword 的值
         String adminAccount = request.getParameter("adminAccount");
         String adminPassword = request.getParameter("adminPassword");
-
+        String adminName = "";
+        String adminSex = "";
+        String adminAge = "";
+        String adminWorkYear = "";
+        String adminPhone = "";
+        String adminIntroduction = "";
+        String adminPower = "";
         String resultCode = "";
         String resultMessage = "";
 
@@ -78,6 +85,13 @@ public class AdminLoginServlet extends HttpServlet {
                 if(resultSet.next()) {
                     resultCode = ResultCode.LOGIN_SUCCESS;
                     resultMessage = ResultCode.LOGIN_SUCCESS_MSG;
+                    adminName = resultSet.getString("adminName");
+                    adminWorkYear = String.valueOf(resultSet.getInt("adminWorkYear"));
+                    adminPower = String.valueOf(resultSet.getInt("adminPower"));
+                    adminAge = String.valueOf(resultSet.getInt("adminAge"));
+                    adminSex = resultSet.getString("adminSex");
+                    adminPhone = resultSet.getString("adminPhone");
+                    adminIntroduction = resultSet.getString("adminIntroduction");
                 }else {
                     resultCode = ResultCode.LOGIN_DATA_WRONG;
                     resultMessage = ResultCode.LOGIN_DATA_WRONG_MSG;
@@ -94,6 +108,15 @@ public class AdminLoginServlet extends HttpServlet {
         Map<String, String> map = new HashMap<>();
         map.put("resultCode", resultCode);
         map.put("resultMessage", resultMessage);
+        map.put("adminAccount",adminAccount);
+        map.put("adminPassword",adminPassword);
+        map.put("adminName",adminName);
+        map.put("adminWorkYear",adminWorkYear);
+        map.put("adminPower",adminPower);
+        map.put("adminAge",adminAge);
+        map.put("adminSex",adminSex);
+        map.put("adminPhone",adminPhone);
+        map.put("adminIntroduction",adminIntroduction);
 
 //		将map转化为json数据格式，这里用到了GSON 第三方包
         Gson gson = new Gson();
@@ -114,8 +137,19 @@ public class AdminLoginServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
 
+        //写默认参数了，我实在想不出啥方法了，不这么写，用户输入错误密码是，就崩了，json转换时会包空指针
         String adminAccount = null;
         String adminPassword = null;
+        String adminName = "黄山";
+        String adminSex = "男";
+        String adminAge = "0";
+        String adminWorkYear = "0";
+        String adminPhone = "12345678987";
+        String adminIntroduction = "无";
+        String adminPower = "9";
+        String resultCode = "";
+        String resultMessage = "";
+
         String[] temp;
 
 //		获取传过来的map
@@ -133,9 +167,6 @@ public class AdminLoginServlet extends HttpServlet {
             }
         }
         System.out.println("adminAccount:"+adminAccount+","+"adminPassword:"+adminPassword);
-
-        String resultCode = "";
-        String resultMessage = "";
 
         if (adminAccount == null || adminPassword == null){
             resultCode = ResultCode.LOGIN_DATA_NULL;
@@ -160,6 +191,15 @@ public class AdminLoginServlet extends HttpServlet {
                 if(resultSet.next()) {
                     resultCode = ResultCode.LOGIN_SUCCESS;
                     resultMessage = ResultCode.LOGIN_SUCCESS_MSG;
+
+                    adminName = resultSet.getString("adminName");
+                    adminWorkYear = String.valueOf(resultSet.getInt("adminWorkYear"));
+                    adminPower = String.valueOf(resultSet.getInt("adminPower"));
+                    adminAge = String.valueOf(resultSet.getInt("adminAge"));
+                    adminSex = resultSet.getString("adminSex");
+                    adminPhone = resultSet.getString("adminPhone");
+                    adminIntroduction = resultSet.getString("adminIntroduction");
+
                 }else {
                     resultCode = ResultCode.LOGIN_DATA_WRONG;
                     resultMessage = ResultCode.LOGIN_DATA_WRONG_MSG;
@@ -173,6 +213,15 @@ public class AdminLoginServlet extends HttpServlet {
         HashMap<String, String> map = new HashMap<>();
         map.put("resultCode", resultCode);
         map.put("resultMessage", resultMessage);
+        map.put("adminAccount",adminAccount);
+        map.put("adminPassword",adminPassword);
+        map.put("adminName",adminName);
+        map.put("adminWorkYear",adminWorkYear);
+        map.put("adminPower",adminPower);
+        map.put("adminAge",adminAge);
+        map.put("adminSex",adminSex);
+        map.put("adminPhone",adminPhone);
+        map.put("adminIntroduction",adminIntroduction);
 
 
         Gson gson = new Gson();

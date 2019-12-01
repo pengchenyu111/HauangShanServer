@@ -129,10 +129,12 @@ public class SelectDailyNumServlet extends HttpServlet {
         List<DailyNum> dailyNums = new ArrayList<DailyNum>();
 
         //连接数据库
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
         try {
-            Connection connection = DBUtil.getConnect();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet;
+            connection = DBUtil.getConnect();
+            statement = connection.createStatement();
 
             String sql =
                     "SELECT  * FROM huangshan.tb_dailynum " +
@@ -164,11 +166,12 @@ public class SelectDailyNumServlet extends HttpServlet {
             PrintWriter pw = response.getWriter();
             pw.append(respData);
             pw.flush();
-
-            //关闭连接
-            DBUtil.close(connection, statement, resultSet);
+            pw.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            //关闭连接
+            DBUtil.close(connection, statement, resultSet);
         }
     }
 }

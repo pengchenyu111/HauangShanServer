@@ -30,4 +30,10 @@ public class ResultCode {
 
     public static final String DELETE_ADMIN_FAIL= "007";
     public static final String DELETE_ADMIN_FAIL_MSG= "该管理员删除失败";
+
+    public static final String ADD_NOTIFICATION_SUCCESS= "008";
+    public static final String ADD_NOTIFICATION_SUCCESSS_MSG= "添加通知成功";
+
+    public static final String ADD_NOTIFICATION_FAIL= "009";
+    public static final String ADD_NOTIFICATION_FAIL_MSG= "添加通知失败";
 }

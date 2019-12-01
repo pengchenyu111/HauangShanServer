@@ -38,10 +38,10 @@ public class DBUtil {
         ds.setUrl(URL);
         ds.setUsername(USER);
         ds.setPassword(PASSWORD);
-        ds.setMaxTotal(20);//设置最大连接数
-        ds.setInitialSize(10);//设置初始化连接数
-        ds.setMaxIdle(8);//当空闲下载的时候，连接最大数量
-        ds.setMinIdle(5);//当空闲时间过长后，变为最小空闲
+        ds.setMaxTotal(200);//设置最大连接数
+        ds.setInitialSize(20);//设置初始化连接数
+        ds.setMaxIdle(16);//当空闲下载的时候，连接最大数量
+        ds.setMinIdle(10);//当空闲时间过长后，变为最小空闲
     }
 
 
